@@ -1,42 +1,43 @@
-# Vesper
+<p align="center"><img src="web/assets/vesper-mark.svg" width="120" alt="Vesper orbital mark"></p>
+<h1 align="center">VESPER</h1>
+<p align="center"><strong>Quantitative intelligence. Evidenced decisions.</strong></p>
+<p align="center">Research · Simulation · Portfolio · Risk · Evidence</p>
 
-> **Status: clean-slate redesign.** This repository is an initial project shell, not a running application or an automated trading system.
+---
 
-Vesper is an independent quantitative research and financial-systems engineering project. The intent is to re-examine the architecture, safeguards, and useful experiments from earlier work, then build a maintainable system from first principles.
+Vesper is an independent, clean-slate financial intelligence platform. **It is not a renamed bot, brokerage, live trading system, or investment product.** It separates reproducible research, simulated decisions, account performance, risk and future authorized integrations.
 
-The earlier financial/trading codebase was called **RHEN**. That name is now reserved for a **separate programming-language project, Rhen**. The two projects do not share a codebase or release process.
+**State:** source-only foundation and synthetic terminal prototype, under review. No broker connections, real accounts, bank transfers, executable trades or production deployment exist here.
 
-## What exists here
+## Explore the synthetic research terminal
 
-- An initial project boundary and legacy-reference record.
-- **No verified implementation, tests, broker connection, production deployment, automated execution, or investment-performance result in this new repository.**
+    python -m http.server 4173 --directory web
 
-For the transition and the preserved predecessor history, see [Legacy handoff](docs/LEGACY-HANDOFF.md).
+Open http://localhost:4173. All displayed figures are deliberately synthetic; the terminal has no fetches or credentials.
 
-## Engineering approach
+## Test the finance research core
 
-1. Begin with explicit, testable research questions and safety requirements.
-2. Study the predecessor implementation as reference material; do not assume it is suitable for direct migration.
-3. Implement small, independently testable modules with clear data provenance and failure behavior.
-4. Keep offline research, paper simulation, and any eventual broker execution distinct.
-5. Require independent risk, security, account-ownership, and authorization review before any financial side effects.
+Requires Python 3.13+ and Node.js 22+; no external packages:
 
-The new platform's architecture and features are not considered implemented merely because they are proposed or existed in earlier code.
+    PYTHONPATH=src python -m unittest discover -s tests -v
+    python -m compileall -q src tests
+    node --test web/logic.test.mjs
+    node --check web/app.mjs
 
-## Project boundaries
+## Source map
 
-| Project | Purpose |
-| --- | --- |
-| **Vesper** | Quantitative research, risk analysis, and separately authorized financial-systems development |
-| **Rhen** | Independent general-purpose language research and implementation; to be established in its own clean repository |
-| **Merit** | Independent engineering-integrity and evidence-review project |
+- src/vesper — pure Decimal-based, owner/account-scoped performance primitives, with evidence completeness required explicitly.
+- tests — independent offline unit tests for negative, missing, duplicate and mismatched data.
+- web — responsive static terminal using only synthetic samples.
+- docs — architecture, design, safeguards and predecessor history.
+- .github/workflows — test-only CI without secrets or deployment.
 
-Do not move private account data, credentials, order histories, customer records, or broker configuration between repositories. Do not deploy, fund, or activate trading from this documentation.
+See [architecture](docs/ARCHITECTURE.md), [product/experience](docs/PRODUCT.md), [legacy handoff](docs/LEGACY-HANDOFF.md), and [security](SECURITY.md).
 
-## Contributing and licensing
+## Repository boundaries
 
-This repository has not yet selected or added a software license. Public visibility by itself does **not** grant general reuse rights. A license must be selected and applied before claiming a reusable open-source release. No external contributions or financial integrations are authorized by this initial README.
+Vesper is separate from the Rhen programming language and Merit engineering integrity system. The large predecessor finance/research repository is still temporarily located at [devonalanakins/rhen](https://github.com/devonalanakins/rhen). Preserve its existing commits and open draft pull requests, including the TPD evidence calculator. No wholesale migration, deletion, funding or trading activation is permitted by this branch.
 
-## Current next step
+## Licensing
 
-Complete the predecessor repository name handoff without deleting or force-rewriting its branches or pull requests. Then begin Vesper's clean architecture and independently testable research core.
+The owner has not approved a license yet. Public repository visibility does not grant open-source reuse rights. Choose and apply an approved license before accepting contributions or claiming a reusable open-source release.
