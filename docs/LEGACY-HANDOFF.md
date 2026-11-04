@@ -1,13 +1,21 @@
 # Legacy source and repository handoff
 
+## Current verified status — November 4, 2026
+
+**Completed identity change:** The historical financial repository is now [devonalanakins/vesper-legacy](https://github.com/devonalanakins/vesper-legacy), preserving GitHub repository ID `1384456079`, historical source/branches and open PRs. A distinct [devonalanakins/rhen](https://github.com/devonalanakins/rhen) repository (ID `1445605353`) now houses language research; its bounded M0 compiler is in [draft PR #1](https://github.com/devonalanakins/vesper-legacy/pull/1), not merged or released. The new [Vesper](https://github.com/devonalanakins/vesper) redesign is a separate repository (ID `1445180370`).
+
+**Migration gate remains open:** [anevum-web draft PR #811](https://github.com/devonalanakins/anevum-web/pull/811) repoints the pinned cross-repo workspace contract to `vesper-legacy`; its specific source-parity check succeeded, while full CI was blocked by the existing Cloudflare preview Access check. Public website [draft PR #31](https://github.com/devonalanakins/devonakins.com/pull/31), profile [draft PR #2](https://github.com/devonalanakins/devonalanakins/pull/2) and portfolio [draft PR #44](https://github.com/devonalanakins/anevum/pull/44) correct the published links. Those drafts are not merged or deployed. Other hidden integration/webhook dependencies have not been fully audited.
+
+**Historical note:** Sections below preserve the pre-rename handoff inventory and reasoning. An occurrence of `rhen` there means the **former** repository name, not the new language project. Do not copy an old Rhen repo URL without checking its current owner and repo ID.
+
 ## Verified inventory (November 4, 2026)
 
 | Item | Observed state |
 | --- | --- |
 | New Vesper | `devonalanakins/vesper`; GitHub repository ID `1445180370`; independent history; initial commit `dc33df2259dd15824372ac4c202c511a30d72f8e` |
-| Predecessor financial/trading repository | Currently `devonalanakins/rhen`; GitHub repository ID `1384456079`; existing code and history still present; observed `main` commit `0430a4ea89463e5d6943bf674004f5b245e6d450` |
-| Legacy open review work | [Draft PR #497](https://github.com/devonalanakins/rhen/pull/497) (TPD research), [draft PR #500](https://github.com/devonalanakins/rhen/pull/500) (identity documentation), among other work. Preserve every open PR and branch. |
-| New Rhen programming language | Separate, **not yet verified as a dedicated GitHub repository**. Never treat the predecessor financial repository as language source. |
+| Predecessor financial/trading repository | At handoff `devonalanakins/rhen`, now `devonalanakins/vesper-legacy`; GitHub repository ID `1384456079`; existing code and history still present; observed `main` commit `0430a4ea89463e5d6943bf674004f5b245e6d450` |
+| Legacy open review work | [Draft PR #497](https://github.com/devonalanakins/vesper-legacy/pull/497) (TPD research), [draft PR #500](https://github.com/devonalanakins/vesper-legacy/pull/500) (identity documentation), among other work. Preserve every open PR and branch. |
+| New Rhen programming language | At handoff it was not yet created; now separate and verified as `devonalanakins/rhen`, GitHub repository ID `1445605353` with experimental M0 draft PR #1. Never treat predecessor finance source as language source. |
 
 The GitHub **repository ID**, rather than a reusable slug, identifies the original history after a rename. A historical URL beginning with `.../rhen` may become misleading when the name is assigned to a new repository.
 
