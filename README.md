@@ -36,7 +36,7 @@ See [architecture](docs/ARCHITECTURE.md), [product/experience](docs/PRODUCT.md),
 
 ## Repository boundaries
 
-Vesper is separate from the Rhen programming language and Merit engineering integrity system. The large predecessor finance/research repository is still temporarily located at [devonalanakins/rhen](https://github.com/devonalanakins/rhen). Preserve its existing commits and open draft pull requests, including the TPD evidence calculator. No wholesale migration, deletion, funding or trading activation is permitted by this branch.
+Vesper is separate from the Rhen programming language and Merit engineering integrity system. The large predecessor financial/research source has been preserved under [Vesper Legacy](https://github.com/devonalanakins/vesper-legacy) (GitHub repository ID `1384456079`), with its original history and open draft PRs, including the TPD evidence calculator. [Rhen](https://github.com/devonalanakins/rhen) is now an independent programming-language research repository, with an experimental compiler in draft review. No wholesale code migration, deletion, funding, or trading activation is permitted by this branch.
 
 ## Licensing
 
