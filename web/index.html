@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b17">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Vesper experimental financial research terminal. Synthetic data, no trades.">
+  <title>Vesper | Research Terminal</title>
+  <link rel="icon" href="./assets/vesper-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="./" aria-label="Vesper terminal home">
+        <img src="./assets/vesper-mark.svg" alt="" width="42" height="42">
+        <span>VESPER <small>RESEARCH SYSTEM</small></span>
+      </a>
+      <div class="sidebar-section">WORKSPACE</div>
+      <nav class="nav" aria-label="Research views">
+        <button type="button" class="nav-item is-selected" data-view="overview" aria-current="page"><span class="nav-glyph" aria-hidden="true">◈</span>Overview</button>
+        <button type="button" class="nav-item" data-view="research"><span class="nav-glyph" aria-hidden="true">⌁</span>Research</button>
+        <button type="button" class="nav-item" data-view="risk"><span class="nav-glyph" aria-hidden="true">◇</span>Risk</button>
+        <button type="button" class="nav-item" data-view="evidence"><span class="nav-glyph" aria-hidden="true">⊞</span>Evidence</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="mini-dot" aria-hidden="true"></span><span>OFFLINE / SYNTHETIC</span>
+        <p>No brokerage or bank connection.<br>No orders or transfers.</p>
+      </div>
+    </aside>
+    <div class="workarea">
+      <header class="topbar">
+        <span class="breadcrumb">RESEARCH CONSOLE <span aria-hidden="true">/</span> <strong id="breadcrumb-view">OVERVIEW</strong></span>
+        <div class="topbar-right">
+          <span class="mode-indicator">SIMULATION ONLY</span>
+          <span class="version">BUILD 0.1 / CONCEPT</span>
+        </div>
+      </header>
+      <main id="main" tabindex="-1">
+        <div class="page-head">
+          <div><p class="eyebrow">FINANCIAL INTELLIGENCE / PROTOTYPE 01</p><h1 id="view-heading">See the signal.<br><em>Question everything.</em></h1><p id="view-description" class="lede">A research environment where capital decisions are examined before they're made.</p></div>
+          <div class="orientation" aria-label="Current mode"><span class="orientation-orbit" aria-hidden="true"></span><div><small>OPERATING MODE</small><strong>OBSERVE</strong><span>All actions disabled</span></div></div>
+        </div>
+        <div class="safety-banner" role="status"><span class="safety-symbol" aria-hidden="true">!</span><span><strong>SYNTHETIC RESEARCH DATA</strong> — All values are illustrative, locally generated examples. No live prices, real account data, verified returns, or actionable trading recommendations.</span></div>
+        <div class="content" id="dynamic-content">
+          <section class="metrics" aria-label="Synthetic financial metrics">
+            <article class="metric"><span class="metric-label">ILLUSTRATIVE EQUITY</span><strong class="metric-value" id="equity">$124,890.00</strong><small>Example scenario, not an account</small></article>
+            <article class="metric"><span class="metric-label">ILLUSTRATIVE RETURN</span><strong class="metric-value positive" id="period-return">+11.80%</strong><small id="period-label">Synthetic 1M window</small></article>
+            <article class="metric"><span class="metric-label">DECISION PERMISSION</span><strong class="metric-value status-value">DISABLED</strong><small>No execution interfaces</small></article>
+          </section>
+          <div class="body-grid">
+            <section class="panel chart-panel" aria-labelledby="chart-title">
+              <div class="panel-title-row"><div><p class="overline">PERFORMANCE STUDY</p><h2 id="chart-title">Equity trajectory <span> / synthetic</span></h2></div>
+                <div class="periods" aria-label="Synthetic chart window"><button class="period active" type="button" data-period="1W" aria-pressed="false">1W</button><button class="period" type="button" data-period="1M" aria-pressed="true">1M</button><button class="period" type="button" data-period="1Y" aria-pressed="false">1Y</button></div>
+              </div>
+              <div class="chart-frame"><svg id="equity-chart" viewBox="0 0 800 260" preserveAspectRatio="none" role="img" aria-labelledby="svg-title svg-description"><title id="svg-title">Synthetic equity study</title><desc id="svg-description">Illustrative equity curve, not real market data</desc><g id="chart-grid"></g><path id="chart-fill" fill="url(#chart-gradient)" d=""></path><path id="chart-line" d="" fill="none" stroke="#92ebdc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path><defs><linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#65e5d1" stop-opacity=".23"/><stop offset="1" stop-color="#65e5d1" stop-opacity="0"/></linearGradient></defs></svg></div>
+              <div class="chart-footer"><span id="chart-range">Illustrative sample: synthetic 1M series</span><span>NOT INVESTMENT PERFORMANCE</span></div>
+            </section>
+            <section class="panel insight-panel"><p class="overline">RESEARCH DISCIPLINE</p><h2>Before action,<br><em>evidence.</em></h2><p>No strategy is trusted because a graph looks promising. Every signal needs a falsifiable hypothesis, observable limitations and reproducible tests.</p><div class="insight-rule"><span>01</span><span>Observe the data</span></div><div class="insight-rule"><span>02</span><span>Challenge the model</span></div><div class="insight-rule"><span>03</span><span>Enforce the boundary</span></div><div class="insight-tag">RESEARCH ≠ EXECUTION</div></section>
+          </div>
+          <section class="foot-panel" aria-label="Verification and implementation"><div><span class="overline">SYSTEM INTEGRITY</span><h2>Built to explain itself.</h2></div><p>Explicit provenance. Isolated account scopes. Transparent assumptions. No manufactured certainty.</p><span class="foot-status">IN DEVELOPMENT</span></section>
+        </div>
+      </main>
+      <footer class="footer"><span>VESPER / THE RESEARCH LAYER</span><span>OFFLINE CONCEPT • NO FINANCIAL ACTIONS</span></footer>
+    </div>
+  </div>
+</body>
+</html>
