@@ -1,4 +1,5 @@
 import { WINDOWS, chartGeometry, summarizeSeries } from "./logic.mjs";
+import { evidenceCards } from "./evidence-view.mjs";
 
 // Static, synthetic example only. This program intentionally has no fetch,
 // WebSocket, storage, credentials, account identifiers, broker or order APIs.
@@ -65,11 +66,7 @@ const dataSections = {
     ["02 / POLICY ENFORCEMENT", "Hard limits, not suggestions.", "Live sizing, drawdown controls and independent kill switches require separate implementation and review.", "NOT IMPLEMENTED"],
     ["03 / EXECUTION", "No order pathway.", "This repository cannot place a trade, move money or authorize a banking operation.", "DISABLED"]
   ],
-  evidence: [
-    ["01 / PROVENANCE", "The source must be known.", "A value needs an owner, account, timestamp, evidence identifier and completeness state.", "DOMAIN CONTRACT"],
-    ["02 / PERFORMANCE", "Contributions are not profit.", "Linked time-weighted return distinguishes external capital movements from investment change.", "OFFLINE MATH"],
-    ["03 / VERIFICATION", "Missing means unavailable.", "No invented exact return when valuation evidence is incomplete or the account is unfunded.", "FAIL CLOSED"]
-  ]
+  evidence: evidenceCards()
 };
 
 function renderScreen(view) {
@@ -96,7 +93,7 @@ function renderScreen(view) {
     detail.id = "detail-content";
     content.after(detail);
   }
-  detail.className = "detail-grid";
+  detail.className = "detail-grid" + (view === "evidence" ? " evidence-grid" : "");
   detail.innerHTML = dataSections[view].map(([step, title, text, status]) =>
     '<article class="panel detail-card"><span class="overline">' + escapeHtml(step) +
     '</span><h2>' + escapeHtml(title) + '</h2><p>' + escapeHtml(text) +

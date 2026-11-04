@@ -20,8 +20,9 @@ Open http://localhost:4173. All displayed figures are deliberately synthetic; th
 Requires Python 3.13+ and Node.js 22+; no external packages:
 
     PYTHONPATH=src python -m unittest discover -s tests -v
-    python -m compileall -q src tests
-    node --test web/logic.test.mjs
+    python -m compileall -q src tests scripts
+    PYTHONPATH=src python scripts/generate_synthetic_evidence.py --check
+    node --test web/logic.test.mjs web/evidence-view.test.mjs
     node --check web/app.mjs
 
 ## Source map
@@ -41,3 +42,9 @@ Vesper is separate from the Rhen programming language and Merit engineering inte
 ## Licensing
 
 The owner has not approved a license yet. Public repository visibility does not grant open-source reuse rights. Choose and apply an approved license before accepting contributions or claiming a reusable open-source release.
+
+## Read-only evidence projection
+
+The Evidence screen consumes a checked-in, **synthetic-only** ES-module fixture generated from Python's Decimal-based time-weighted performance model. Generate it using `PYTHONPATH=src python scripts/generate_synthetic_evidence.py` and verify determinism with `--check`. The projection omits all owner, account, activity and evidence identifiers. It shows **unavailable** instead of exposing a number when the required evidence is incomplete.
+
+This is not account authentication, broker reconciliation, production financial data, or investment advice. The projection's caller-supplied owner/account match is a data consistency guard; real authorization requires a future server-side identity and access layer. See [evidence contract](docs/EVIDENCE-CONTRACT.md).
