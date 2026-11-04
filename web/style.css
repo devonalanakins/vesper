@@ -189,3 +189,6 @@ h2 {font-size:clamp(18px,1.6vw,25px);letter-spacing:-.03em;font-weight:600;margi
 @media (prefers-reduced-motion:reduce) {
   *, *::before, *::after {scroll-behavior:auto !important;transition:none !important;animation:none !important;}
 }
+
+/* Evidence projection uses two balanced columns without compressing research cards. */
+@media (min-width:901px) { .detail-grid.evidence-grid {grid-template-columns:repeat(2,minmax(0,1fr));} }
